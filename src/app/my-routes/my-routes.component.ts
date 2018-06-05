@@ -10,17 +10,16 @@ import { RouteService } from '../route.service';
 })
 export class MyRoutesComponent implements OnInit {
 
-  //routes =  Route[];
-
+  routes: Route[] =  [];
   constructor(private routeService: RouteService) { }
 
   ngOnInit() {
-  //  this.getRoutes();
+    this.getRoutes();
   }
 
-  // getRoutes(): void {
-  //   this.routeService.getRoutes()
-  //       .subscribe(routes => this.routes = routes);
-  // }
+  getRoutes(): void {
+    this.routeService.getRoutes()
+        .subscribe(routes => this.routes = routes);
+  }
 }
 

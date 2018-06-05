@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Ingredient } from "../recipes/ingredient.model";
+import { ToDoListService } from "./to-do-list.service";
 
 @Component({
   selector: 'app-to-do-list',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./to-do-list.component.scss']
 })
 export class ToDoListComponent implements OnInit {
-
-  constructor() { }
+  ingredients: Ingredient[];
+  
+  constructor(private toDoListService: ToDoListService ) { }
 
   ngOnInit() {
+    this.ingredients = this.toDoListService.getIngredients();
+    this.toDoListService.ingredientsChanged.subscribe(
+      (ingredients: Ingredient[]) => {
+        this.ingredients = ingredients;
+      }
+    )
   }
 
 }
