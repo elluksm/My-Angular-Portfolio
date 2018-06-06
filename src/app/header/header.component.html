@@ -1,14 +1,44 @@
-<nav class="topnav">
-  <div class="leftFloat">
-      <a routerLink="">Home</a>
-  </div>
-  
-  <div class="rightFloat">
-      <a routerLink="/myWishlist" routerLinkActive="active" >My Wishlist</a>
-      <a routerLink="/myRoutes" routerLinkActive="active">My Routes</a>
-      <a routerLink="/toDoList" routerLinkActive="active">To Do List</a>
-      <a routerLink="/recipes" routerLinkActive="active">Best Recipes</a>
-      <a routerLink="/login" routerLinkActive="active">Login</a>
-  </div>
-  
-</nav>
+<header  class="h-100">
+
+  <mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" [containerInside]="false">
+    <logo>
+      <a class="logo navbar-brand" a routerLink="">
+        <strong><i class="fa fa-plane fa-lg"></i></strong>
+      </a>
+    </logo>
+
+    <links>
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item waves-light">
+            <a class="nav-link waves-light" routerLink="" routerLinkActive="active" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item waves-light" mdbWavesEffect>
+          <a class="nav-link" routerLink="" routerLinkActive="active">My Favorite Places</a>
+        </li>
+
+        <li class="nav-item waves-light" mdbWavesEffect>
+          <a class="nav-link" routerLink="/myRoutes" routerLinkActive="active">My Trip Planner</a>
+        </li>
+
+        <li class="nav-item waves-light" mdbWavesEffect>
+            <a class="nav-link" routerLink="/toDoList" routerLinkActive="active">To Do List</a>
+        </li>
+
+        <li class="nav-item waves-light" mdbWavesEffect>
+            <a class="nav-link" routerLink="/recipes" routerLinkActive="active">World Cuisine Recipes</a>
+        </li>
+              
+        <li class="nav-item waves-light" mdbWavesEffect>
+            <a class="nav-link" routerLink="/login" routerLinkActive="active">Log In</a>
+        </li>
+
+      </ul>
+
+
+    </links>
+
+  </mdb-navbar>
+
+</header>

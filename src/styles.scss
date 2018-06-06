@@ -8,6 +8,26 @@ body {
     margin: 0;
     font-family: $font;
     font-size: 18px;
+    font-weight: 400;
   }
 
-  
+  /* Navigation bar styles */
+  .navbar {
+    background-color: rgba(0, 10, 0, 0.5);
+}
+
+.top-nav-collapse {
+    background-color: #263238;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #263238;
+    }
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link { 
+      padding-right: 0.8rem;
+      padding-left: 0.8rem;
+  } }

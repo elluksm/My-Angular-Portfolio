@@ -1,27 +1,11 @@
 @import '../../scss/variables';
 @import '../../scss/mixins';
 
-.topnav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 75px;
-    padding-top: 25px;
-
-    background-color: rgba(0,10,0,0.3);
-
-    a {
-        padding: 25px 20px;
-        color:$col-white;
-        text-decoration: none;
-        text-transform: uppercase;
-
-        &:hover {
-            background-color: black;
-        }
-    }
-}
+@media (min-width: 992px) {
+.navbar-expand-lg .navbar-nav .nav-link { 
+    padding-left: 0.7rem;
+    padding-left: 0.7rem;
+} }
 .leftFloat {
     float: left;
     padding-left: 30px;
@@ -30,3 +14,4 @@
     float: right;
     padding-right: 30px;
 }
+   
