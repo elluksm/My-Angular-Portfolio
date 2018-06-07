@@ -1,9 +1,9 @@
-@import '../../scss/variables';
-@import '../../scss/mixins';
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
 
 .container-fluid {
     margin-top: 0px;
-    background-image: $trip-img;
+    background-image: $places-img;
     background-size: cover;
     height: 800px;
 }

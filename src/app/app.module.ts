@@ -16,7 +16,7 @@ import { ContactFormComponent } from './landing-page/contact-form/contact-form.c
 import { CarouselComponent } from './landing-page/carousel/carousel.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
-import { MyRoutesComponent } from './my-routes/my-routes.component';
+import { MyRoutesComponent } from './routes-and-places/my-routes/my-routes.component';
 import { LoginComponent } from './login/login.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
@@ -25,6 +25,8 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
 import { ListEditComponent } from './to-do-list/list-edit/list-edit.component';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { RouteItemComponent } from './routes-and-places/my-routes/route-item/route-item.component';
+import { MyPlacesComponent } from './routes-and-places/my-places/my-places.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     RecipeItemComponent,
     ListEditComponent,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    RouteItemComponent,
+    MyPlacesComponent
     
   ],
   imports: [
