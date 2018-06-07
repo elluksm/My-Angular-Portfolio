@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { SimpleSmoothScrollModule } from 'ng2-simple-smooth-scroll';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -52,7 +53,8 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     AppRoutingModule,
     FormsModule,
     MDBBootstrapModule.forRoot(),
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    SimpleSmoothScrollModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [],

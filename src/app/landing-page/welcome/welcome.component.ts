@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
 
-  title = 'My Angular Travel Portfolio';
+  title = 'My Travel Planning Portfolio';
   
   constructor() { }
 

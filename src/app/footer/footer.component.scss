@@ -2,20 +2,23 @@
 @import '../../scss/mixins';
 
 .footer {
-    height: 165px;
-    margin-top: 40px;
+    height: 100px;
+    margin-top: 25px;
     color: $col-grey;
     text-align: center;
   
     small {
-      padding-bottom: 30px;
+      padding-bottom: 20px;
       display: block;
       font-size: 18px;
     }
   
     //social logo
-    .social:hover {
-      color: $col-light-blue;
+    .social{
+      padding-right: 3px;
+      padding-left: 3px;
+      &:hover {
+        color: $col-light-blue;
     }
-  
+  }
   }

@@ -3,6 +3,9 @@
 @import 'scss/mixins';
 @import 'node_modules/font-awesome/scss/font-awesome.scss';
 
+.container-fluid {
+    padding: 0;
+}
 body {
     width: 100%;
     margin: 0;

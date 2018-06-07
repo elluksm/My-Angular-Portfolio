@@ -1,7 +1,54 @@
 <div class="container-carousel">
+            
+  <mdb-carousel [isControls]="true" class="carousel slide carousel-fade" [animation]="'fade'">
+      <!--First slide-->
+      <mdb-slide>
+          <div class="view">
+              <img class="d-block w-100" src="https://images.unsplash.com/photo-1503221043305-f7498f8b7888?ixlib=rb-0.3.5&s=5be56e430f082a2184c910633d7e7e00&auto=format&fit=crop&w=1335&q=80" alt="My Favorite Places">
+              <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+          </div>
+          <div class="carousel-caption">
+              <h3 class="h3-responsive">Save all your favorite places together</h3>
+              <p><a class="carousel-links" routerLink="">My Favorite Places</a></p>
+          </div>
+      </mdb-slide>
+      <!--/First slide-->
 
-<p>
-  There will be a carousel!
-</p>
+      <mdb-slide>
+          <div class="view">
+              <img class="d-block w-100" src="https://images.unsplash.com/photo-1484544808355-8ec84e534d75?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fc1407c2a550b0ebf3def8b81fa7b4a2&auto=format&fit=crop&w=1366&q=80" alt="My Trip Planner">
+              <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
+          </div>
+          <div class="carousel-caption">
+              <h3 class="h3-responsive">Plan your trip with all details</h3>
+              <p><a class="carousel-links" routerLink="/myRoutes">My Trip Planner</a></p>
+          </div>
+      </mdb-slide>
+    
+      <!--Third slide-->
+      <mdb-slide>
+          <div class="view">
+              <img class="d-block w-100" src="https://images.unsplash.com/photo-1470049384172-927891aad5e9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ac4bc16cc8dad01a26d1ab843b91aaa9&auto=format&fit=crop&w=1350&q=80" alt="To Do List">
+              <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+          </div>
+          <div class="carousel-caption">
+              <h3 class="h3-responsive">Plan everything what you need to Do</h3>
+              <p><a class="carousel-links" routerLink="/toDoList">To Do List</a></p>
+          </div>
+      </mdb-slide>
 
+          <!--Fourth slide-->
+          <mdb-slide>
+              <div class="view">
+                  <img class="d-block w-100" src="https://images.unsplash.com/photo-1447078806655-40579c2520d6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9ff8655a257a1570a467770fc0f75bb9&auto=format&fit=crop&w=1350&q=80" alt="World Cuisine Recipes">
+                  <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+              </div>
+              <div class="carousel-caption">
+                  <h3 class="h3-responsive">Best recipes from all over the world</h3>
+                  <p><a class="carousel-links" routerLink="/recipes">World Cuisine Recipes</a></p>
+              </div>
+          </mdb-slide>
+      
+  </mdb-carousel>
+              
 </div>
