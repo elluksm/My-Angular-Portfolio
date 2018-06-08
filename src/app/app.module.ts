@@ -25,8 +25,11 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
 import { ListEditComponent } from './to-do-list/list-edit/list-edit.component';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
-import { RouteItemComponent } from './routes-and-places/my-routes/route-item/route-item.component';
+import { RouteItemComponent } from './routes-and-places/route-item/route-item.component';
 import { MyPlacesComponent } from './routes-and-places/my-places/my-places.component';
+import { RouteMapComponent } from './routes-and-places/route-map/route-map.component';
+import { RouteDescriptionComponent } from './routes-and-places/route-description/route-description.component';
+import { ListGroupComponent } from './to-do-list/list-group/list-group.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,10 @@ import { MyPlacesComponent } from './routes-and-places/my-places/my-places.compo
     RecipeStartComponent,
     RecipeEditComponent,
     RouteItemComponent,
-    MyPlacesComponent
+    MyPlacesComponent,
+    RouteMapComponent,
+    RouteDescriptionComponent,
+    ListGroupComponent
     
   ],
   imports: [
@@ -58,7 +64,8 @@ import { MyPlacesComponent } from './routes-and-places/my-places/my-places.compo
     FormsModule,
     MDBBootstrapModule.forRoot(),
     AngularFontAwesomeModule,
-    SimpleSmoothScrollModule
+    SimpleSmoothScrollModule,
+
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [],

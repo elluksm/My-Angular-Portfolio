@@ -4,6 +4,5 @@ import { Point } from "./point.model"
     public id: number;
     public name: string;
     public description: string;
-    public imagePath: string;
     public points: Point[];
  }

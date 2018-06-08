@@ -8,16 +8,16 @@ import { RouteService } from '../route.service';
   styleUrls: ['./my-places.component.scss']
 })
 export class MyPlacesComponent implements OnInit {
-  routes: Route[] =  [];
+  places: Route[] =  [];
   constructor(private routeService: RouteService) { }
 
   ngOnInit() {
-    this.getRoutes();
+    this.getPlaces();
   }
 
-  getRoutes(): void {
-    this.routeService.getRoutes()
-        .subscribe(routes => this.routes = routes);
+  getPlaces(): void {
+    this.routeService.getPlaces()
+        .subscribe(places => this.places = places);
   }
 
 }

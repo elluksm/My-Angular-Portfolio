@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Route } from '../../route.model';
+import { Route } from '../route.model';
 
 @Component({
   selector: 'app-route-item',
@@ -8,6 +8,7 @@ import { Route } from '../../route.model';
 })
 export class RouteItemComponent implements OnInit {
   @Input () route: Route;
+
   constructor() { }
 
   ngOnInit() {

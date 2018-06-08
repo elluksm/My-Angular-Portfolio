@@ -1,15 +1,15 @@
 <div class="container-fluid">
   <div class="container">
+      <div class="row">
 
-      <div class="col-md-4">
-
-          <app-route-item *ngFor="let routeEl of routes"
-          [route]="routeEl"
-          ></app-route-item>  
-          
+        <div class="col-md-3">
+            <app-route-item *ngFor="let routeEl of routes"
+            [route]="routeEl"
+            ></app-route-item>  
           <button class="btn btn-success">New Trip</button>
-   
-        <div class="col-md-8">
+        </div> 
+
+        <div class="col-md-9">
           <router-outlet></router-outlet>
         </div>
 
