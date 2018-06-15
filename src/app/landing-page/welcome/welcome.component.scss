@@ -1,0 +1,72 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+
+.welcome {
+    height: 887px;
+    background-image: $header-img;
+    background-size: cover;
+    color: $col-white;
+
+  
+    .container-welcome {
+      max-width: 1100px;
+      margin-right: auto;
+      margin-left: auto;
+      padding-top: 80px;
+  
+      .container-welcome-heading {
+        max-width: 660px;
+        padding-top: 280px;
+      }
+  
+      .container-welcome-text {
+        max-width: 780px;
+      }
+    }
+  
+    h1 {
+      margin-top: 0;
+      margin-bottom: 30px;
+      font-size: 60px;
+      font-weight: 300;
+      line-height: 110%;
+    }
+  
+    p {
+      line-height: 30px;
+    }
+  
+    .welcome-links {
+      margin-top: 40px;
+      box-sizing: border-box;
+    }
+  
+    .blue-button {
+      margin-top: 50px;
+      padding: 17px 115px 17px 115px;
+      text-decoration: none;
+      height: 60px;
+        box-sizing: border-box;
+        border: none;
+        color: $col-white;
+        background-color: $col-dark-blue;
+        font-family: $font;
+        font-size: 18px;
+
+        &:hover {
+            background-color: $col-light-blue;
+          }
+    }
+  
+    .dashed-link {
+      margin-left: 25px;
+      padding-bottom: 3px;
+      color: $col-white;
+      text-decoration: underline dashed grey ;
+  
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+

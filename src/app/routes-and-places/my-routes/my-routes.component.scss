@@ -1,0 +1,16 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+
+.container-fluid {
+    margin-top: 0px;
+    background-image: $trip-img;
+    background-size: cover;
+    height: 800px;
+}
+
+.container {
+    max-width: 1500px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 100px;
+}

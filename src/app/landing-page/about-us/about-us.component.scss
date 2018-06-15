@@ -1,0 +1,75 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+
+.content {
+    h2 {
+      font-size: 48px;
+      font-weight: 300;
+      color: $col-dark;
+      text-align: center;
+    }
+  
+    h3 {
+      text-align: center;
+      font-size: 24px;
+      color: $col-dark;
+    }
+  
+    p {
+      color: $col-grey;
+    }
+  }
+
+.about-us {
+    height: 700px;
+  
+    .container-about-us {
+      max-width: 1200px;
+      margin-right: auto;
+      margin-left: auto;
+      padding-top: 93px;
+    }
+  
+    .column-about-us {
+      width: 33.33%;
+      float: left;
+  
+      .column-padding {
+        padding-right: 13%;
+        padding-left: 13%;
+      }
+    }
+  
+    .circle {
+      width: 120px;
+      height: 120px;
+      margin-left: auto;
+      margin-right: auto;
+      padding:0;
+      border: 1px solid $col-grey;
+      border-radius: 50%;
+    }
+  
+    p {
+      margin-top: 6px;
+      text-align: justify;
+      text-align-last: center;
+      line-height: 30px;
+    }
+  
+    h3 {
+      margin-top: 20px;
+      margin-bottom: 0;
+    }
+  
+    h2 {
+      margin-bottom: 45px;
+    }
+  }
+  
+  .about-logo {
+    @include translate-center(-50%, -50%);
+    position: relative;
+    color: $col-grey;
+  }
+  

@@ -1,0 +1,12 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.leftFloat {
+    float: left;
+    padding-left: 30px;
+}
+.rightFloat {
+    float: right;
+    padding-right: 30px;
+}
+   

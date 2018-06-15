@@ -1,0 +1,26 @@
+// Colors
+$col-white: #ffffff;
+$col-dark: #494e68;
+$col-grey: #85919d;
+$col-light-blue: #3a4964;
+$col-dark-blue: #262d38;
+$col-red: #ff6262;
+$col-light-red: #fbcdcd;
+
+// Fonts
+$font: 'Open Sans', sans-serif;
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400);
+
+// Images
+$header-img: url(https://images.unsplash.com/photo-1493673272479-a20888bcee10?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1f2960274a222e313ad094b2604a83d2&auto=format&fit=crop&w=1350&q=80);
+$query-img: url(https://images.unsplash.com/photo-1467189386127-c4e5e31ee213?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8887240783ef88e200fa003a93edab95&auto=format&fit=crop&w=1350&q=80);
+$carousel-img: url(https://images.unsplash.com/photo-1487581424120-18f3611a63e6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=eb87a25dcd5110b903616b765084274a&auto=format&fit=crop&w=1326&q=80);
+
+$recipe-img: url(https://images.unsplash.com/photo-1494390248081-4e521a5940db?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=73a27b0f1231b46fad892c62f220b9d8&auto=format&fit=crop&w=1295&q=80);
+$toDoList-img: url(https://images.unsplash.com/photo-1484557594760-42c1ac0c092e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=007d4a76c7eebabb9275bcfb54ea7f67&auto=format&fit=crop&w=1299&q=80);
+$trip-img: url(https://images.unsplash.com/photo-1484544808355-8ec84e534d75?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fc1407c2a550b0ebf3def8b81fa7b4a2&auto=format&fit=crop&w=1366&q=80);
+$places-img: url(https://images.unsplash.com/photo-1503221043305-f7498f8b7888?ixlib=rb-0.3.5&s=5be56e430f082a2184c910633d7e7e00&auto=format&fit=crop&w=1335&q=80);
+$logIn-img: url();
+
+
+$fa-font-path : '../node_modules/font-awesome/fonts';

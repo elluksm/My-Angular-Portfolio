@@ -1,0 +1,123 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+
+.content {
+    h2 {
+      font-size: 48px;
+      font-weight: 300;
+      color: $col-dark;
+      text-align: center;
+    }
+  
+    h3 {
+      text-align: center;
+      font-size: 24px;
+      color: $col-dark;
+    }
+  
+    p {
+      color: $col-grey;
+    }
+  }
+
+.query {
+    height: 652px;
+    color: $col-white;
+  
+    .container-query {
+      max-width: 340px;
+      margin-right: auto;
+      margin-left: auto;
+      padding-top: 80px;
+    }
+  
+    h2 {
+      margin: 0;
+      color: $col-white;
+    }
+  
+    blockquote {
+      text-align: center;
+      margin: 25px 0 42px 0;
+      line-height: 30px;
+    }
+  
+    input {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 9px 9px 9px 15px;
+      box-sizing: border-box;
+      border: none;
+      font-size: 16px;
+      font-family: $font;
+      font-style: italic;
+    }
+  
+    select {
+      width: 100%;
+      padding: 9px 9px 9px 15px;
+      border: none;
+      font-size: 16px;
+      font-family: $font;
+      font-style: italic;
+  
+      option {
+        color: $col-dark;
+      }
+    }
+  
+    div.phone-input {
+      width: 48%;
+      float: left;
+    }
+  
+    div.email-input {
+      width: 49%;
+      float: right;
+    }
+  
+    button {
+      width: 100%;
+      margin-top: 30px;
+    }
+  
+    //form fields without errors
+    .normal-form-field {
+      color: $col-dark;
+      @include placeholder-color ($col-grey);
+    }
+  
+    .normal-form-field-name {
+      color: $col-dark;
+      @include placeholder-color ($col-dark);
+    }
+  
+    .normal-form-field-select {
+      color: $col-grey;
+    }
+  
+    //form fields with errors
+    .error-form-field {
+      background-color: $col-light-red;
+      color: $col-red;
+      @include placeholder-color ($col-red);
+    }
+  }
+  
+  .query-background {
+    background: $col-grey $query-img no-repeat center;
+  }
+
+  .blue-button {
+    height: 60px;
+    box-sizing: border-box;
+    border: none;
+    color: $col-white;
+    background-color: $col-dark-blue;
+    font-family: $font;
+    font-size: 18px;
+  
+    &:hover {
+      background-color: $col-light-blue;
+    }
+  }
