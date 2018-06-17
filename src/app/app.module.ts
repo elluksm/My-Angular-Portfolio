@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { SimpleSmoothScrollModule } from 'ng2-simple-smooth-scroll';
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -63,8 +63,8 @@ import { ListGroupComponent } from './to-do-list/list-group/list-group.component
     AppRoutingModule,
     FormsModule,
     MDBBootstrapModule.forRoot(),
-    AngularFontAwesomeModule,
-    SimpleSmoothScrollModule
+    AngularFontAwesomeModule
+
 
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
