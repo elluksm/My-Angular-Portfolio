@@ -1,19 +1,49 @@
 <section class="welcome">
-  <div class="container-welcome">
-      
-      <div>
-          <div class="container-welcome-heading">
-              <h1>Welcome to {{ title }}!</h1>
-          </div>
-          <div class="container-welcome-text">
-              <p>Mr. Fogg readily made a bargain with the owner of this land-craft. The wind was favourable, being fresh, and blowing from the west.
-                  The snow had hardened, and Mudge was very confident of being able to transport Mr. Fogg in a few hours to Omaha.</p>
-              <div class="welcome-links">
-                  <a href="#querySection" id="linkQuery" class="blue-button" >Click To Contact Us</a>
-                  <a data-popup-open="popup-learn-more" class="dashed-link">Learn more about our services</a>
+    <div class="container-welcome">
+        
+        <div>
+            <div class="container-welcome-heading">
+                <h1>Welcome to {{ title }}!</h1>
+            </div>
+            <div class="container-welcome-text">
+                <p>Mr. Fogg readily made a bargain with the owner of this land-craft. The wind was favourable, being fresh, and blowing from the west.
+                    The snow had hardened, and Mudge was very confident of being able to transport Mr. Fogg in a few hours to Omaha.</p>
+                <div class="welcome-links">
+                    <a href="#querySection" id="linkQuery" class="blue-button" SimpleSmoothScroll [scrollTo]="'querySection'" [duration]="800">Click To Contact Us</a>
+                    <a data-toggle="modal" data-target="#basicExample" (click)="demoBasic.show()" mdbWavesEffect class="dashed-link">Learn more about our services</a>
+                </div>
+            </div>
+        </div>
+  
+  </div>
+  </section>
+  
+  
+  <div mdbModal #demoBasic="mdb-modal" class="modal fade" id="basicExample" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg popup" role="document">
+              <div class="popup-inner">
+                  <img src="https://images.unsplash.com/photo-1495572050486-a9b739c11fb9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7ed8945979820790676347b7c6b75174&auto=format&fit=crop&w=634&q=80" height="231" width="800">
+                  <h2>We are number one!</h2>
+                  <p>Go and gaze upon the iron emblematical harpoons round yonder lofty mansion, and your question will be answered. Yes; all these brave houses
+                      and flowery gardens came from the Atlantic, Pacific, and Indian oceans. One and all, they were harpooned and dragged up hither from the bottom of the sea.
+                      Can Herr Alexander perform a feat like that?</p>
+  
+                  <div class="links">
+                      <div class="column-links">
+                          <i class="fa fa-star fa-2x"></i>
+                          <a href="#">See reviews</a>
+                      </div>
+                      <div class="column-links">
+                          <i class="fa fa-child fa-2x"></i>
+                          <a href="#">Partnership</a>
+                      </div>
+                      <div class="column-links">
+                          <i class="fa fa-check-circle fa-2x"></i>
+                          <a href="#">Adverts</a>
+                      </div>
+                  </div>
+                  <a class="close" data-dismiss="modal" aria-label="Close" (click)="demoBasic.hide()" href="#"><i class="fa fa-times popup-close fa-2x"></i></a>
               </div>
-          </div>
       </div>
-
-</div>
-</section>
+  </div>
+  

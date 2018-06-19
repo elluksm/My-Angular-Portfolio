@@ -1,3 +1,31 @@
-<p>
-  Route Description
-</p>
+<div class="description">
+  <h2>
+      {{ route.name }} 
+  </h2>
+     
+  <p>
+      <span> Route Description: </span> {{ route.description }}
+  </p>   
+   <p>
+      <span> Route Points: </span>
+   </p>
+
+  <div class="list-group">
+      <a class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let point of route.points">
+        <div class="d-flex w-100">
+          
+        </div>
+      <div class="row">
+        <div class="col">
+              <h5 class="mb-1">{{point.name}}</h5>
+          <p class="mb-1">{{point.description}}</p>
+      </div>
+      <div class="col-3">
+        <img *ngIf="point.imagePath" [src] = "point.imagePath" alt="{{ point.name }}" class="img-responsive" style="max-height:80px;"> 
+      </div>
+  </div>
+      </a>
+  </div>
+</div>
+
+ 

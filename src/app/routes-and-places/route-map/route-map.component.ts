@@ -2,7 +2,7 @@ import { Component, OnInit,ViewChild } from '@angular/core';
 import { Route } from '../route.model';
 import { RouteService } from "../route.service";
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { } from '@types/googlemaps';
+import {} from '@types/googlemaps';
 
 @Component({
   selector: 'app-route-map',
@@ -15,7 +15,8 @@ export class RouteMapComponent implements OnInit {
 
   @ViewChild('gmap') gmapElement: any;
   map: google.maps.Map;
-  bounds: google.maps.LatLngBounds;
+  markers: google.maps.Marker[];
+  routePath: any[];
 
   constructor(private routeService: RouteService, private actRoute: ActivatedRoute, private router: Router) { }
 
@@ -30,165 +31,94 @@ export class RouteMapComponent implements OnInit {
     this.actRoute.params.subscribe(
       (params: Params) => {
         this.id = +params['id'];
-        this.getRoute(this.id);
+        var url = this.router.url;
+        var idCategory;
+        if (url.includes("myPlaces")) {
+          idCategory = 1;
+        } else {
+          idCategory = 2;
+        }
+        this.getRoute(this.id, idCategory);
       }
     )
     
   }
 
-  getRoute(id: number): void {
-    this.routeService.getRoute(id)
+  getRoute(id: number, idCategory: number): void {
+    this.routeService.getRoute(id, idCategory)
       .subscribe(route => {
         this.route = route;
-        this.showRoute ();
+        this.showRoute (idCategory);
       })  
   };
 
 
- showRoute () {
-
-  //var marker = new google.maps.Marker({position: {lat: -25.344, lng: 131.036}, map: this.map});
-
-  var routePoint = {lat: -25.344, lng: 121.036};
- //create pushpin (new Marker for each pin) on the map
-  var marker = new google.maps.Marker({
-    position: routePoint,
-    map: this.map
-});
-
-var routePoint = {lat: -15.344, lng: 15.036};
-//create pushpin (new Marker for each pin) on the map
- var marker = new google.maps.Marker({
-   position: routePoint,
-   map: this.map
-});
+ showRoute (idCategory: number) {
+   if(this.markers) {
+    for (var i = 0; i < this.markers.length; i++) {
+      this.markers[i].setMap(null);
+    }
+   }
   
-}
+  this.markers = [];
+  this.routePath = [];
+  var currentlyOpened = null;
+  for (var i = 0; i < this.route.points.length; i++) {
+    var point = this.route.points[i];
+    var routePoint = {lat: point.lat, lng: point.lon};
+    this.routePath.push(routePoint);
+    var marker = new google.maps.Marker({
+      position: routePoint,
+      map: this.map
+  });
+  this.markers.push(marker);
 
-}
+  // HTML for Pin InfoWindow
+var content = "<div>" +
+'<div><b>Title: </b>' + point.name + '</div>' +
+'<div><b>Description: </b>' + point.description + '</div>' +
+'<div><img src = "' + point.imagePath + '" style="max-height:100px;"> </div>' +
+"</div>";
 
+var infowindow = new google.maps.InfoWindow();
 
- //currentlyOpenedRouteID: any = null;
-//   //create new empty infowindow
-//   var infowindow = null;
-//   var infowindow = new google.maps.InfoWindow({
-//       content: ''
-//   });
+//add event listener for each marker to display InfoWindow when clicked
+google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){
+return function() {
+    if (currentlyOpened)
+    {
+        currentlyOpened.close();
+    }
+    infowindow.setContent(content);
+    infowindow.open(this.map,marker);
+    currentlyOpened = infowindow;
+};
+}(marker,content,infowindow)));
+  }
 
-//   //
-//   var routePath = []; //array of coordinates
-//   var currentMarkers = [];
-//   if (window.allMarkers){
-//       //Clear all markers;
+  var bounds = new google.maps.LatLngBounds();
+  for (var i = 0; i < this.markers.length; i++) {
+   bounds.extend(this.markers[i].getPosition());
+  }
+  this.map.fitBounds(bounds);
 
-//       for (var i = 0; i < window.allMarkers.length; i++) {
-//           window.allMarkers[i].setMap(null);
-//       }
-//       markers = [];
-//   }
+  if (idCategory == 2) {
+    var flightPath = new google.maps.Polyline({
+      path: this.routePath,
+      geodesic: true,
+      strokeColor: '#FF0000',
+      strokeOpacity: 1.0,
+      strokeWeight: 2
+    });
+  
+    flightPath.setMap(this.map);
+  }
 
-//   var currentlyOpened = null;
+    }
 
-//   //Clear previous lines
-//   if (window.routeLines){
-//       window.routeLines.setMap(null);
-//   }
-
-//   //go through all pins for selected route/individual points
-//   for (var i = 0; i < pinArray.length; i++) {
-
-//       var pin = pinArray[i]
-
-//       var lat = parseFloat(pin.lat);
-//       var lon = parseFloat(pin.lon);
-//       var description = pin.description;
-//       var title = pin.title;
-//       var write_time = moment.unix(pin.write_time).format("YYYY/MM/DD HH:mm:ss");
-
-//       var routePoint = {lat: lat, lng: lon};
-//       routePath.push(routePoint);
-
-//       if (title) {
-//           //create pushpin (new Marker for each pin) on the map
-//           var marker = new google.maps.Marker({
-//               position: routePoint,
-//               map: this.map
-//           });
-
-//           currentMarkers.push(marker);
-
-
-
-//       // HTML for Pin InfoWindow
-//       var content = "<div data-pin-id="+pin.id+">" +
-//           '<div><span class = "pinComment">Title: </span><span class = "pinCommentTitle">' + title + '</span></div>' +
-//           '<div ondblclick="editPinDesc(this, \'description\')"><span class = "pinComment">Description: </span><span class = "pinCommentDescription">' + description + '</span></div>' +
-//           '<div><span class = "pinComment">Write time: </span>' + write_time + '</div>' +
-//           "<button name = 'edit' data-pin-id="+pin.id+" class='editBtn commentBtn' onClick=editPin(this)>Edit Pin</button>" +
-//           "<button data-pin-id="+pin.id+" data-route-id="+routeId+" class='delBtn commentBtn' onClick=deletePin(this)>Delete Pin</button>" +
-//           "</div>";
-
-//       var infowindow = new google.maps.InfoWindow();
-
-//       //add event listener for each marker to display InfoWindow when clicked
-//       google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){
-//           return function() {
-//               if (currentlyOpened)
-//               {
-//                   currentlyOpened.close();
-//               }
-//               infowindow.setContent(content);
-//               infowindow.open(map,marker);
-//               currentlyOpened = infowindow;
-//           };
-//       }(marker,content,infowindow)));
+  
+  }
 
 
 
-//       //Event listener for Menu comments (when you click, a new InfoWindow for that pin opens)
-//       createCommentInfo = function(pin, comment, infowindow, marker, content){
-//           return function(){
-//               if (currentlyOpened)
-//               {
-//                   currentlyOpened.close();
-//               }
 
-//               //var currentRef = $.extend({},content);
-//               var currentRef = content + '';
-//               infowindow.setContent(currentRef);
-//               infowindow.open(map,marker);
-//               console.log(title, description, i, pinArray[i], pin);
-//               currentlyOpened = infowindow;
-//           }
-//       };
-
-//       //create comment for each pin with pin title (to display in menu under clicked route)
-//       var comment = $('<a href="#" pin-id="'+pin.id+'" class="singleComment"> # ' + pin.title + '</a><br>');
-//       comment.click(createCommentInfo(pin, comment, infowindow, marker, content)); //add event listener
-//       commentContainer.append(comment);
-//   };
-//   }
-
-//   //path for drawing lines between pushpins
-//   window.allMarkers = currentMarkers;
-//   routeLines = new google.maps.Polyline({
-//       path: routePath,
-//       strokeColor: '#872e61',
-//       strokeOpacity: 1.0,
-//       strokeWeight: 2
-//   });
-
-//   //if it is a route (not individual points), draw line between pushpins
-//   if (connectPoints) {
-//       routeLines.setMap(map);
-//       window.routeLines = routeLines;
-//   }
-
-//   //zoom map around pushpins
-//   var markers = [];
-//   var bounds = new google.maps.LatLngBounds();
-//   for (var i = 0; i < currentMarkers.length; i++) {
-//       bounds.extend(allMarkers[i].getPosition());
-//   }
-//   map.fitBounds(bounds);
-// }

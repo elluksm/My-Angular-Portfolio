@@ -21,7 +21,12 @@ export class RouteService {
     return of(ROUTES);
   }
 
-  getRoute (id: number): Observable<Route> {
-    return of(ROUTES.find(route => route.id === id));
+  getRoute (id: number, idCategory: number): Observable<Route> {
+    if(idCategory == 1) {
+      return of(PLACES.find(route => route.id === id));
+    } else {
+      return of(ROUTES.find(route => route.id === id));
+    }
+    
   }
 }
